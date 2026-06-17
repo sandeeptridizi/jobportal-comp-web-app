@@ -49,7 +49,6 @@ export function JobPackageSelection({ onSelectPackage, onClose }: JobPackageSele
         className="relative w-full max-w-6xl max-h-[90vh] overflow-y-auto rounded-3xl p-8"
         style={{ background: '#f6f6f6', boxShadow: '0 25px 50px rgba(255, 195, 0, 0.3)' }}
       >
-        {/* Close Button */}
         <button
           onClick={onClose}
           className="absolute top-6 right-6 w-10 h-10 rounded-full flex items-center justify-center transition-all"
@@ -58,7 +57,6 @@ export function JobPackageSelection({ onSelectPackage, onClose }: JobPackageSele
           <X className="w-5 h-5" />
         </button>
 
-        {/* Header */}
         <div className="text-center mb-8">
           <motion.div
             initial={{ y: -20, opacity: 0 }}
@@ -72,7 +70,6 @@ export function JobPackageSelection({ onSelectPackage, onClose }: JobPackageSele
           </motion.div>
         </div>
 
-        {/* Package Cards */}
         <div className="grid md:grid-cols-2 gap-8">
           {packages.map((pkg, index) => {
             const Icon = pkg.icon;
@@ -92,7 +89,6 @@ export function JobPackageSelection({ onSelectPackage, onClose }: JobPackageSele
                     : '0 5px 20px rgba(0, 0, 0, 0.1)'
                 }}
               >
-                {/* Popular Badge */}
                 {pkg.popular && (
                   <motion.div
                     initial={{ x: 100 }}
@@ -104,7 +100,6 @@ export function JobPackageSelection({ onSelectPackage, onClose }: JobPackageSele
                   </motion.div>
                 )}
 
-                {/* Animated Background */}
                 <motion.div
                   className="absolute inset-0 opacity-10"
                   animate={{
@@ -116,7 +111,6 @@ export function JobPackageSelection({ onSelectPackage, onClose }: JobPackageSele
                 />
 
                 <div className="relative z-10">
-                  {/* Package Header */}
                   <div className="flex items-center gap-4 mb-6">
                     <div 
                       className="w-16 h-16 rounded-2xl flex items-center justify-center"
@@ -136,7 +130,6 @@ export function JobPackageSelection({ onSelectPackage, onClose }: JobPackageSele
                     </div>
                   </div>
 
-                  {/* Price */}
                   <div className="mb-6">
                     <div className="flex items-baseline gap-2">
                       <span className="text-sm" style={{ color: '#6f6f6f' }}>
@@ -154,7 +147,6 @@ export function JobPackageSelection({ onSelectPackage, onClose }: JobPackageSele
                     </div>
                   </div>
 
-                  {/* Features */}
                   <div className="space-y-4 mb-8">
                     {pkg.features.map((feature, idx) => {
                       const FeatureIcon = feature.icon;
@@ -197,7 +189,6 @@ export function JobPackageSelection({ onSelectPackage, onClose }: JobPackageSele
                     })}
                   </div>
 
-                  {/* CTA Button */}
                   <motion.button
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
@@ -233,7 +224,6 @@ export function JobPackageSelection({ onSelectPackage, onClose }: JobPackageSele
           })}
         </div>
 
-        {/* Info Footer */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

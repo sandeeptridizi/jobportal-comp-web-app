@@ -52,7 +52,6 @@ export function AuthScreen({ onLogin }: AuthScreenProps) {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-8 relative overflow-hidden" style={{ background: '#000000' }}>
-      {/* Animated Background */}
       <motion.div
         className="absolute inset-0 opacity-30"
         animate={{
@@ -71,7 +70,6 @@ export function AuthScreen({ onLogin }: AuthScreenProps) {
         <ForgotPassword onBack={() => setShowForgotPassword(false)} />
       ) : (
         <div className="w-full max-w-6xl grid grid-cols-2 gap-8 items-center relative z-10">
-          {/* Left Side - Branding */}
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -132,7 +130,6 @@ export function AuthScreen({ onLogin }: AuthScreenProps) {
             </ul>
           </motion.div>
 
-          {/* Right Side - Auth Form */}
           <motion.div 
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -140,7 +137,6 @@ export function AuthScreen({ onLogin }: AuthScreenProps) {
             className="rounded-2xl shadow-2xl overflow-hidden relative"
             style={{ background: '#f6f6f6', border: '2px solid #d3d3d3' }}
           >
-            {/* Tabs */}
             <div className="flex border-b" style={{ borderColor: '#d3d3d3' }}>
               <motion.button
                 whileHover={{ scale: 1.02 }}
@@ -184,7 +180,6 @@ export function AuthScreen({ onLogin }: AuthScreenProps) {
               </motion.button>
             </div>
 
-            {/* Forms */}
             <div className="p-10">
               {isLogin ? (
                 <motion.form 

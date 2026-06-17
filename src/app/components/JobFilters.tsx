@@ -44,7 +44,6 @@ export function JobFilters({ filters, setFilters }: JobFiltersProps) {
         )}
       </div>
 
-      {/* Job Type Filter */}
       <div className="mb-6">
         <h4 className="mb-3 text-gray-700">Job Type</h4>
         <div className="space-y-2">
@@ -62,7 +61,6 @@ export function JobFilters({ filters, setFilters }: JobFiltersProps) {
         </div>
       </div>
 
-      {/* Department Filter */}
       <div className="mb-6">
         <h4 className="mb-3 text-gray-700">Department</h4>
         <div className="space-y-2">
@@ -80,7 +78,6 @@ export function JobFilters({ filters, setFilters }: JobFiltersProps) {
         </div>
       </div>
 
-      {/* Location Filter */}
       <div>
         <h4 className="mb-3 text-gray-700">Location</h4>
         <div className="space-y-2">

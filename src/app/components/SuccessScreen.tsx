@@ -25,7 +25,6 @@ export function SuccessScreen({
       className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
       style={{ background: 'rgba(0, 0, 0, 0.95)' }}
     >
-      {/* Animated Background Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(20)].map((_, i) => (
           <motion.div
@@ -51,7 +50,6 @@ export function SuccessScreen({
         ))}
       </div>
 
-      {/* Success Card */}
       <motion.div
         initial={{ scale: 0.5, opacity: 0, y: 50 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}
@@ -67,7 +65,6 @@ export function SuccessScreen({
           border: '2px solid #FFC300'
         }}
       >
-        {/* Glow Effect */}
         <motion.div
           className="absolute inset-0 pointer-events-none"
           animate={{
@@ -79,9 +76,7 @@ export function SuccessScreen({
           }}
         />
 
-        {/* Content */}
         <div className="relative z-10 p-8 space-y-6">
-          {/* Success Icon */}
           <motion.div
             className="flex justify-center"
             initial={{ scale: 0, rotate: -180 }}
@@ -120,7 +115,6 @@ export function SuccessScreen({
                 <CheckCircle className="w-14 h-14" style={{ color: '#000000' }} />
               </motion.div>
               
-              {/* Sparkles around icon */}
               {[...Array(6)].map((_, i) => (
                 <motion.div
                   key={i}
@@ -148,7 +142,6 @@ export function SuccessScreen({
             </div>
           </motion.div>
 
-          {/* Title */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -183,7 +176,6 @@ export function SuccessScreen({
             </motion.p>
           </motion.div>
 
-          {/* Action Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -226,7 +218,6 @@ export function SuccessScreen({
                     border: 'none',
                   }}
                 >
-                  {/* Shimmer Effect */}
                   <motion.div
                     className="absolute inset-0 w-full"
                     animate={{
@@ -251,7 +242,6 @@ export function SuccessScreen({
           </motion.div>
         </div>
 
-        {/* Decorative Lines */}
         <motion.div
           className="absolute top-0 left-0 right-0 h-1"
           style={{ 

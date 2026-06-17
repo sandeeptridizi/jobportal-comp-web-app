@@ -20,7 +20,6 @@ export function ApplicationForm({ job, onCancel }: ApplicationFormProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, this would submit to an API
     console.log('Application submitted:', { job: job.id, ...formData });
     setSubmitted(true);
   };

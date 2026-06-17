@@ -65,7 +65,6 @@ export function JobsManager({ jobs, applicants, onAddJob, onUpdateJob, onDeleteJ
       onUpdateJob(job);
     } else {
       onAddJob(job);
-      // Show success screen for new jobs
       if (job.status === 'Active') {
         setSuccessJobTitle(job.title);
         setShowSuccessScreen(true);
@@ -147,7 +146,6 @@ export function JobsManager({ jobs, applicants, onAddJob, onUpdateJob, onDeleteJ
     return (
       <div className="p-8 min-h-screen" style={{ background: '#f6f6f6' }}>
         <div className="max-w-7xl mx-auto">
-          {/* Back Button */}
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -166,7 +164,6 @@ export function JobsManager({ jobs, applicants, onAddJob, onUpdateJob, onDeleteJ
             <span className="relative z-10">Back to Job Postings</span>
           </motion.button>
 
-          {/* Job Details */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -281,7 +278,6 @@ export function JobsManager({ jobs, applicants, onAddJob, onUpdateJob, onDeleteJ
             </div>
           </motion.div>
 
-          {/* Applicants Section */}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -294,7 +290,6 @@ export function JobsManager({ jobs, applicants, onAddJob, onUpdateJob, onDeleteJ
                 <h2 style={{ color: '#000000' }}>Applications ({allJobApplicants.length})</h2>
               </div>
               
-              {/* Applicant Status Filters */}
               <div className="flex gap-2">
                 {(['All', 'New', 'Reviewed', 'Shortlisted', 'Accepted', 'Rejected'] as const).map(status => {
                   const count = status === 'All' 
@@ -444,7 +439,6 @@ export function JobsManager({ jobs, applicants, onAddJob, onUpdateJob, onDeleteJ
           </div>
         </div>
 
-        {/* Messenger Chat */}
         {chatApplicant && (
           <MessengerChat
             applicant={chatApplicant}
@@ -455,7 +449,6 @@ export function JobsManager({ jobs, applicants, onAddJob, onUpdateJob, onDeleteJ
           />
         )}
 
-        {/* Resume Viewer */}
         {resumeApplicant && (
           <ResumeViewer
             applicant={resumeApplicant}
@@ -469,7 +462,6 @@ export function JobsManager({ jobs, applicants, onAddJob, onUpdateJob, onDeleteJ
   return (
     <div className="p-8 min-h-screen" style={{ background: '#f6f6f6' }}>
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="flex justify-between items-start mb-8">
           <div>
             <motion.div
@@ -520,7 +512,6 @@ export function JobsManager({ jobs, applicants, onAddJob, onUpdateJob, onDeleteJ
           </div>
         </div>
 
-        {/* Filters and Search */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -580,7 +571,6 @@ export function JobsManager({ jobs, applicants, onAddJob, onUpdateJob, onDeleteJ
           </div>
         </motion.div>
 
-        {/* Jobs Table */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -738,7 +728,6 @@ export function JobsManager({ jobs, applicants, onAddJob, onUpdateJob, onDeleteJ
         </motion.div>
       </div>
 
-      {/* Job Form Modal */}
       {showForm && (
         <JobForm
           job={editingJob}
@@ -748,7 +737,6 @@ export function JobsManager({ jobs, applicants, onAddJob, onUpdateJob, onDeleteJ
         />
       )}
 
-      {/* Success Screen */}
       {showSuccessScreen && (
         <SuccessScreen
           title="Job Published Successfully!"

@@ -1,7 +1,6 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* AI Theme Colors */
   --ai-black: #000000;
   --ai-white: #f6f6f6;
   --ai-dark-grey: #6f6f6f;
@@ -92,7 +91,6 @@
   }
 }
 
-/* AI Animations */
 @keyframes ai-glow {
   0%, 100% {
     box-shadow: 0 0 20px rgba(255, 195, 0, 0.3);
@@ -140,9 +138,7 @@
   }
 }
 
-/**
- * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
- */
+
 @layer base {
   :where(:not(:has([class*=' text-']), :not(:has([class^='text-'])))) {
     h1 {
@@ -199,7 +195,6 @@ html {
   font-size: var(--font-size);
 }
 
-/* AI Utility Classes */
 .ai-glow {
   animation: ai-glow 3s ease-in-out infinite;
 }

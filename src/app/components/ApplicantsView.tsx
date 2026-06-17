@@ -21,11 +21,9 @@ export function ApplicantsView({ jobs, applicants, onUpdateStatus, onStartChat }
   );
   const [chatApplicant, setChatApplicant] = useState<Applicant | null>(null);
 
-  // Safe defaults
   const safeJobs = jobs || [];
   const safeApplicants = applicants || [];
 
-  // Calculate counts
   const jobsCount = safeJobs.filter(j => j.type === 'Full-time' || j.type === 'Part-time').length;
   const internshipsCount = safeJobs.filter(j => j.type === 'Internship').length;
   const freelanceCount = safeJobs.filter(j => j.type === 'Freelance').length;
@@ -45,7 +43,6 @@ export function ApplicantsView({ jobs, applicants, onUpdateStatus, onStartChat }
     return job && job.type === 'Freelance';
   }).length;
 
-  // Count open messages (assuming messages with unread status)
   const openMessagesCount = 0; // This should be connected to actual message data
 
   const filteredApplicants = safeApplicants.filter(applicant => {
@@ -86,7 +83,6 @@ export function ApplicantsView({ jobs, applicants, onUpdateStatus, onStartChat }
 
   return (
     <div className="h-screen flex" style={{ background: '#f6f6f6' }}>
-      {/* Left Side - Applicants List */}
       <div className="w-2/5 flex flex-col" style={{ background: '#ffffff', borderRight: '2px solid #d3d3d3' }}>
         <div className="p-6 text-white relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #000000 0%, #023047 100%)', borderBottom: '2px solid #FFC300' }}>
           <motion.div
@@ -106,7 +102,6 @@ export function ApplicantsView({ jobs, applicants, onUpdateStatus, onStartChat }
               <h1 style={{ color: '#f6f6f6' }}>Job Applications</h1>
             </div>
 
-            {/* Type Filter Tabs */}
             <div className="flex gap-2 mb-4">
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -244,7 +239,6 @@ export function ApplicantsView({ jobs, applicants, onUpdateStatus, onStartChat }
               </motion.button>
             </div>
             
-            {/* Search */}
             <div className="relative mb-4">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5" style={{ color: '#FFC300' }} />
               <input
@@ -265,7 +259,6 @@ export function ApplicantsView({ jobs, applicants, onUpdateStatus, onStartChat }
               />
             </div>
 
-            {/* Filters */}
             <div className="grid grid-cols-2 gap-3">
               <select
                 value={selectedJob}
@@ -312,7 +305,6 @@ export function ApplicantsView({ jobs, applicants, onUpdateStatus, onStartChat }
           </div>
         </div>
 
-        {/* Applicants List */}
         <div className="flex-1 overflow-y-auto">
           {filteredApplicants.length > 0 ? (
             <div>
@@ -404,19 +396,16 @@ export function ApplicantsView({ jobs, applicants, onUpdateStatus, onStartChat }
         </div>
       </div>
 
-      {/* Right Side - Applicant Details */}
       {selectedApplicant ? (
         <div className="flex-1 overflow-y-auto" style={{ background: '#f6f6f6' }}>
           <div className="p-8">
             <div className="max-w-5xl mx-auto">
-              {/* Profile Header Card */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="rounded-2xl shadow-sm mb-6 overflow-hidden"
                 style={{ background: '#ffffff', border: '2px solid #d3d3d3' }}
               >
-                {/* Header Section with Gradient */}
                 <div className="p-8 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #000000 0%, #023047 100%)' }}>
                   <motion.div
                     className="absolute inset-0 opacity-20"
@@ -476,12 +465,9 @@ export function ApplicantsView({ jobs, applicants, onUpdateStatus, onStartChat }
                   </div>
                 </div>
 
-                {/* Contact & Status Section */}
                 <div className="p-8">
-                  {/* Contact Information Row */}
                   <div className="rounded-xl p-6 mb-6" style={{ background: '#f6f6f6', border: '2px solid #d3d3d3' }}>
                     <div className="grid grid-cols-2 gap-8">
-                      {/* Email */}
                       <div className="flex items-center gap-4">
                         <motion.div 
                           className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 shadow-sm"
@@ -496,7 +482,6 @@ export function ApplicantsView({ jobs, applicants, onUpdateStatus, onStartChat }
                         </div>
                       </div>
 
-                      {/* Phone */}
                       <div className="flex items-center gap-4">
                         <motion.div 
                           className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 shadow-sm"
@@ -513,7 +498,6 @@ export function ApplicantsView({ jobs, applicants, onUpdateStatus, onStartChat }
                     </div>
                   </div>
 
-                  {/* Status Management */}
                   <div className="rounded-xl p-6 mb-6" style={{ background: '#ffffff', border: '2px solid #FFC300' }}>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
@@ -591,7 +575,6 @@ export function ApplicantsView({ jobs, applicants, onUpdateStatus, onStartChat }
                     </div>
                   </div>
 
-                  {/* Action Buttons */}
                   <div className="flex gap-3 mb-6">
                     {selectedApplicant.linkedIn && (
                       <motion.a
@@ -628,7 +611,6 @@ export function ApplicantsView({ jobs, applicants, onUpdateStatus, onStartChat }
                     </motion.button>
                   </div>
 
-                  {/* Resume Viewer */}
                   <div className="rounded-xl shadow-sm overflow-hidden" style={{ background: '#ffffff', border: '2px solid #d3d3d3' }}>
                     <div className="px-6 py-4 flex items-center justify-between" style={{ background: 'linear-gradient(135deg, #000000 0%, #023047 100%)' }}>
                       <div className="flex items-center gap-3">
@@ -659,7 +641,6 @@ export function ApplicantsView({ jobs, applicants, onUpdateStatus, onStartChat }
                 </div>
               </motion.div>
 
-              {/* Cover Letter Section */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -691,7 +672,6 @@ export function ApplicantsView({ jobs, applicants, onUpdateStatus, onStartChat }
         </div>
       )}
       
-      {/* Messenger Chat */}
       {chatApplicant && (
         <MessengerChat
           applicant={chatApplicant}

@@ -30,7 +30,6 @@ export function ApplicantsManager({ jobs, applicants, onAddJob, onUpdateJob, onD
     { id: 'freelance' as TabType, label: 'Freelance Gigs', icon: Code, type: ['Freelance'] }
   ];
 
-  // Filter applicants based on active tab
   const filteredApplicants = applicants.filter(a => {
     const job = jobs.find(j => j.id === a.jobId);
     const currentTab = tabs.find(t => t.id === activeTab);
@@ -71,7 +70,6 @@ export function ApplicantsManager({ jobs, applicants, onAddJob, onUpdateJob, onD
 
   return (
     <div className="min-h-screen" style={{ background: '#f6f6f6' }}>
-      {/* Top Tab Menu */}
       <div className="sticky top-0 z-40 px-8 pt-8" style={{ background: '#f6f6f6' }}>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -142,7 +140,6 @@ export function ApplicantsManager({ jobs, applicants, onAddJob, onUpdateJob, onD
           </div>
         </motion.div>
 
-        {/* Status Filter Buttons */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -192,7 +189,6 @@ export function ApplicantsManager({ jobs, applicants, onAddJob, onUpdateJob, onD
         </motion.div>
       </div>
 
-      {/* Applicants Table */}
       <div className="px-8 pb-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -297,7 +293,6 @@ export function ApplicantsManager({ jobs, applicants, onAddJob, onUpdateJob, onD
         </motion.div>
       </div>
 
-      {/* Applicant Profile Sidebar */}
       <AnimatePresence>
         {selectedApplicant && (
           <>
@@ -311,7 +306,6 @@ export function ApplicantsManager({ jobs, applicants, onAddJob, onUpdateJob, onD
               onClick={() => setSelectedApplicant(null)}
             />
 
-            {/* Sidebar */}
             <motion.div
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
@@ -342,7 +336,6 @@ export function ApplicantsManager({ jobs, applicants, onAddJob, onUpdateJob, onD
               </div>
 
               <div className="p-6">
-                {/* Match Score */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -365,7 +358,6 @@ export function ApplicantsManager({ jobs, applicants, onAddJob, onUpdateJob, onD
                   </div>
                 </motion.div>
 
-                {/* Applied For */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -384,7 +376,6 @@ export function ApplicantsManager({ jobs, applicants, onAddJob, onUpdateJob, onD
                   </div>
                 </motion.div>
 
-                {/* Contact Information */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -413,7 +404,6 @@ export function ApplicantsManager({ jobs, applicants, onAddJob, onUpdateJob, onD
                   </div>
                 </motion.div>
 
-                {/* Cover Letter */}
                 {selectedApplicant.coverLetter && (
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -427,7 +417,6 @@ export function ApplicantsManager({ jobs, applicants, onAddJob, onUpdateJob, onD
                   </motion.div>
                 )}
 
-                {/* Status Update */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -456,7 +445,6 @@ export function ApplicantsManager({ jobs, applicants, onAddJob, onUpdateJob, onD
                   </div>
                 </motion.div>
 
-                {/* Actions */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -499,7 +487,6 @@ export function ApplicantsManager({ jobs, applicants, onAddJob, onUpdateJob, onD
         )}
       </AnimatePresence>
 
-      {/* Messenger Chat */}
       {chatApplicant && (
         <MessengerChat
           applicant={chatApplicant}
@@ -510,7 +497,6 @@ export function ApplicantsManager({ jobs, applicants, onAddJob, onUpdateJob, onD
         />
       )}
 
-      {/* Resume Viewer */}
       {resumeApplicant && (
         <ResumeViewer
           applicant={resumeApplicant}

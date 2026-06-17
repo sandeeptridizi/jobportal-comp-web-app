@@ -41,7 +41,6 @@ export function QuickRecruit() {
   return (
     <div className="min-h-screen p-8" style={{ background: '#f6f6f6' }}>
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -69,7 +68,6 @@ export function QuickRecruit() {
           </div>
         </motion.div>
 
-        {/* Info Banner */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -100,7 +98,6 @@ export function QuickRecruit() {
           </div>
         </motion.div>
 
-        {/* Package Cards */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {packages.map((pkg, index) => {
             const Icon = pkg.icon;
@@ -140,7 +137,6 @@ export function QuickRecruit() {
                 )}
                 
                 <div className="relative z-10">
-                  {/* Package Header */}
                   <div className="flex items-start justify-between mb-6">
                     <div className="flex items-center gap-3">
                       <div 
@@ -192,7 +188,6 @@ export function QuickRecruit() {
                     )}
                   </div>
 
-                  {/* Price */}
                   <div className="mb-6">
                     <div className="flex items-baseline gap-2">
                       <span className="text-sm" style={{ color: isSelected ? (pkg.id === 'complete' ? '#000000' : '#FFC300') : '#6f6f6f' }}>
@@ -214,7 +209,6 @@ export function QuickRecruit() {
                     </div>
                   </div>
 
-                  {/* Features */}
                   <div className="space-y-4 mb-6">
                     {pkg.features.map((feature, idx) => {
                       const FeatureIcon = feature.icon;
@@ -269,7 +263,6 @@ export function QuickRecruit() {
                     })}
                   </div>
 
-                  {/* CTA Button */}
                   <motion.button
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
@@ -296,7 +289,6 @@ export function QuickRecruit() {
           })}
         </div>
 
-        {/* How It Works Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -347,7 +339,6 @@ export function QuickRecruit() {
           </div>
         </motion.div>
 
-        {/* CTA Section */}
         {selectedPackage && (
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}

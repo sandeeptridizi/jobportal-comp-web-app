@@ -20,7 +20,6 @@ export function InternshipApplications({ jobs, applicants, onUpdateStatus, onSta
   );
   const [chatApplicant, setChatApplicant] = useState<Applicant | null>(null);
 
-  // Safe defaults
   const safeJobs = jobs || [];
   const safeApplicants = applicants || [];
 
@@ -66,7 +65,6 @@ export function InternshipApplications({ jobs, applicants, onUpdateStatus, onSta
 
   return (
     <div className="h-screen flex" style={{ background: '#f6f6f6' }}>
-      {/* Left Side - Applications List */}
       <div className="w-2/5 flex flex-col" style={{ background: '#ffffff', borderRight: '2px solid #d3d3d3' }}>
         <div className="p-6 text-white relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #000000 0%, #023047 100%)', borderBottom: '2px solid #FFC300' }}>
           <motion.div
@@ -92,7 +90,6 @@ export function InternshipApplications({ jobs, applicants, onUpdateStatus, onSta
               <h1 style={{ color: '#f6f6f6' }}>Internship Applications</h1>
             </div>
             
-            {/* Search */}
             <div className="relative mb-4">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5" style={{ color: '#FFC300' }} />
               <input
@@ -113,7 +110,6 @@ export function InternshipApplications({ jobs, applicants, onUpdateStatus, onSta
               />
             </div>
 
-            {/* Filters */}
             <div className="grid grid-cols-2 gap-3">
               <select
                 value={selectedProgram}
@@ -148,7 +144,6 @@ export function InternshipApplications({ jobs, applicants, onUpdateStatus, onSta
           </div>
         </div>
 
-        {/* Applications List */}
         <div className="flex-1 overflow-y-auto">
           {filteredApplicants.length > 0 ? (
             <div>
@@ -240,19 +235,16 @@ export function InternshipApplications({ jobs, applicants, onUpdateStatus, onSta
         </div>
       </div>
 
-      {/* Right Side - Application Details */}
       {selectedApplicant ? (
         <div className="flex-1 overflow-y-auto" style={{ background: '#f6f6f6' }}>
           <div className="p-8">
             <div className="max-w-5xl mx-auto">
-              {/* Profile Header Card */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="rounded-2xl shadow-sm mb-6 overflow-hidden"
                 style={{ background: '#ffffff', border: '2px solid #d3d3d3' }}
               >
-                {/* Header Section with Gradient */}
                 <div className="p-8 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #000000 0%, #023047 100%)' }}>
                   <motion.div
                     className="absolute inset-0 opacity-20"
@@ -312,12 +304,9 @@ export function InternshipApplications({ jobs, applicants, onUpdateStatus, onSta
                   </div>
                 </div>
 
-                {/* Contact & Status Section */}
                 <div className="p-8">
-                  {/* Contact Information Row */}
                   <div className="rounded-xl p-6 mb-6" style={{ background: '#f6f6f6', border: '2px solid #d3d3d3' }}>
                     <div className="grid grid-cols-2 gap-8">
-                      {/* Email */}
                       <div className="flex items-center gap-4">
                         <motion.div 
                           className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 shadow-sm"
@@ -332,7 +321,6 @@ export function InternshipApplications({ jobs, applicants, onUpdateStatus, onSta
                         </div>
                       </div>
 
-                      {/* Phone */}
                       <div className="flex items-center gap-4">
                         <motion.div 
                           className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 shadow-sm"
@@ -349,7 +337,6 @@ export function InternshipApplications({ jobs, applicants, onUpdateStatus, onSta
                     </div>
                   </div>
 
-                  {/* Status Management */}
                   <div className="rounded-xl p-6 mb-6" style={{ background: '#ffffff', border: '2px solid #FFC300' }}>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
@@ -393,7 +380,6 @@ export function InternshipApplications({ jobs, applicants, onUpdateStatus, onSta
                     </div>
                   </div>
 
-                  {/* Action Buttons */}
                   <div className="flex gap-3 mb-6">
                     <motion.a
                       whileHover={{ scale: 1.05 }}
@@ -428,7 +414,6 @@ export function InternshipApplications({ jobs, applicants, onUpdateStatus, onSta
                     </motion.button>
                   </div>
 
-                  {/* Resume Viewer */}
                   <div className="rounded-xl shadow-sm overflow-hidden" style={{ background: '#ffffff', border: '2px solid #d3d3d3' }}>
                     <div className="px-6 py-4 flex items-center justify-between" style={{ background: 'linear-gradient(135deg, #000000 0%, #023047 100%)' }}>
                       <div className="flex items-center gap-3">
@@ -459,7 +444,6 @@ export function InternshipApplications({ jobs, applicants, onUpdateStatus, onSta
                 </div>
               </motion.div>
 
-              {/* Student Information Card */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -493,7 +477,6 @@ export function InternshipApplications({ jobs, applicants, onUpdateStatus, onSta
                 </div>
               </motion.div>
 
-              {/* Statement of Interest Section */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -525,7 +508,6 @@ export function InternshipApplications({ jobs, applicants, onUpdateStatus, onSta
         </div>
       )}
       
-      {/* Messenger Chat */}
       {chatApplicant && (
         <MessengerChat
           applicant={chatApplicant}

@@ -74,7 +74,6 @@ export function CompanyProfile({ user, onUpdateProfile }: CompanyProfileProps) {
           className="rounded-xl overflow-hidden shadow-sm"
           style={{ background: '#ffffff', border: '2px solid #d3d3d3' }}
         >
-          {/* Company Header */}
           <div className="p-10 text-white relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #000000 0%, #023047 100%)' }}>
             <motion.div
               className="absolute inset-0 opacity-20"
@@ -112,7 +111,6 @@ export function CompanyProfile({ user, onUpdateProfile }: CompanyProfileProps) {
             </div>
           </div>
 
-          {/* Profile Form */}
           <form onSubmit={handleSubmit} className="p-10">
             <div className="grid grid-cols-2 gap-6 mb-8">
               <div>
@@ -600,7 +598,6 @@ export function CompanyProfile({ user, onUpdateProfile }: CompanyProfileProps) {
           </form>
         </motion.div>
 
-        {/* Additional Info Section */}
         {!isEditing && (
           <div className="mt-6 grid grid-cols-2 gap-6">
             <motion.div 

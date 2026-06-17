@@ -18,7 +18,6 @@ interface DashboardProps {
 
 export type ViewType = 'overview' | 'jobs' | 'internships' | 'freelance' | 'applicants' | 'quickrecruit' | 'chat' | 'profile' | 'recruiters';
 
-// Mock data
 const initialJobs: Job[] = [
   {
     id: '1',

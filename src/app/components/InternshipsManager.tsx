@@ -124,7 +124,6 @@ export function InternshipsManager({ jobs, applicants, onAddJob, onUpdateJob, on
     return (
       <div className="p-8 min-h-screen" style={{ background: '#f6f6f6' }}>
         <div className="max-w-7xl mx-auto">
-          {/* Back Button */}
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -143,7 +142,6 @@ export function InternshipsManager({ jobs, applicants, onAddJob, onUpdateJob, on
             <span className="relative z-10">Back to Internships</span>
           </motion.button>
 
-          {/* Internship Details */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -255,7 +253,6 @@ export function InternshipsManager({ jobs, applicants, onAddJob, onUpdateJob, on
             </div>
           </motion.div>
 
-          {/* Applications Section */}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -268,7 +265,6 @@ export function InternshipsManager({ jobs, applicants, onAddJob, onUpdateJob, on
                 <h2 style={{ color: '#000000' }}>Applications ({allJobApplicants.length})</h2>
               </div>
               
-              {/* Applicant Status Filters */}
               <div className="flex gap-2">
                 {(['All', 'New', 'Reviewed', 'Shortlisted', 'Accepted', 'Rejected'] as const).map(status => {
                   const count = status === 'All' 
@@ -418,7 +414,6 @@ export function InternshipsManager({ jobs, applicants, onAddJob, onUpdateJob, on
           </div>
         </div>
 
-        {/* Messenger Chat */}
         {chatApplicant && (
           <MessengerChat
             applicant={chatApplicant}
@@ -429,7 +424,6 @@ export function InternshipsManager({ jobs, applicants, onAddJob, onUpdateJob, on
           />
         )}
 
-        {/* Resume Viewer */}
         {resumeApplicant && (
           <ResumeViewer
             applicant={resumeApplicant}
@@ -443,7 +437,6 @@ export function InternshipsManager({ jobs, applicants, onAddJob, onUpdateJob, on
   return (
     <div className="p-8 min-h-screen" style={{ background: '#f6f6f6' }}>
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="flex justify-between items-start mb-8">
           <div>
             <motion.div
@@ -475,7 +468,6 @@ export function InternshipsManager({ jobs, applicants, onAddJob, onUpdateJob, on
           </motion.button>
         </div>
 
-        {/* Filters and Search */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -535,7 +527,6 @@ export function InternshipsManager({ jobs, applicants, onAddJob, onUpdateJob, on
           </div>
         </motion.div>
 
-        {/* Internships Table */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -670,7 +661,6 @@ export function InternshipsManager({ jobs, applicants, onAddJob, onUpdateJob, on
         </motion.div>
       </div>
 
-      {/* Internship Form Modal */}
       {showForm && (
         <JobForm
           job={editingJob}
@@ -680,7 +670,6 @@ export function InternshipsManager({ jobs, applicants, onAddJob, onUpdateJob, on
         />
       )}
 
-      {/* Internship Boost Payment Modal */}
       {showBoostPayment && selectedJobView && (
         <InternshipBoostPayment
           internshipTitle={selectedJobView.title}

@@ -48,7 +48,6 @@ export function MessengerChat({ applicant, onClose }: MessengerChatProps) {
       setMessages([...messages, message]);
       setNewMessage('');
       
-      // Simulate applicant response after 2 seconds
       setTimeout(() => {
         const response: Message = {
           id: (Date.now() + 1).toString(),
@@ -75,7 +74,6 @@ export function MessengerChat({ applicant, onClose }: MessengerChatProps) {
         borderBottom: 'none'
       }}
     >
-      {/* Chat Header */}
       <div 
         className="p-4 rounded-t-2xl flex items-center justify-between cursor-pointer relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #000000 0%, #023047 100%)' }}
@@ -154,7 +152,6 @@ export function MessengerChat({ applicant, onClose }: MessengerChatProps) {
         </div>
       </div>
 
-      {/* Chat Messages */}
       {!isMinimized && (
         <>
           <div className="flex-1 overflow-y-auto p-4 space-y-3" style={{ background: '#f6f6f6' }}>
@@ -198,7 +195,6 @@ export function MessengerChat({ applicant, onClose }: MessengerChatProps) {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Chat Input */}
           <form onSubmit={handleSendMessage} className="p-4" style={{ background: '#ffffff', borderTop: '2px solid #d3d3d3' }}>
             <div className="flex gap-2">
               <input

@@ -21,7 +21,6 @@ export function InternshipBoostPayment({ internshipTitle, onClose, onPaymentSucc
     if (!selectedPaymentMethod) return;
     
     setProcessing(true);
-    // Simulate payment processing
     setTimeout(() => {
       setProcessing(false);
       onPaymentSuccess();
@@ -44,7 +43,6 @@ export function InternshipBoostPayment({ internshipTitle, onClose, onPaymentSucc
       style={{ background: 'rgba(0, 0, 0, 0.9)' }}
       onClick={onClose}
     >
-      {/* Animated Background Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(20)].map((_, i) => (
           <motion.div
@@ -82,7 +80,6 @@ export function InternshipBoostPayment({ internshipTitle, onClose, onPaymentSucc
           border: '2px solid #FFC300',
         }}
       >
-        {/* Close Button */}
         <motion.button
           whileHover={{ scale: 1.1, rotate: 90 }}
           whileTap={{ scale: 0.9 }}
@@ -97,7 +94,6 @@ export function InternshipBoostPayment({ internshipTitle, onClose, onPaymentSucc
           <X className="w-5 h-5" />
         </motion.button>
 
-        {/* Glow Effect */}
         <motion.div
           className="absolute inset-0 pointer-events-none"
           animate={{
@@ -112,7 +108,6 @@ export function InternshipBoostPayment({ internshipTitle, onClose, onPaymentSucc
         <div className="relative z-10 p-8">
           {!showPaymentMethods ? (
             <>
-              {/* Header */}
               <div className="text-center mb-8">
                 <motion.div
                   className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4"
@@ -148,7 +143,6 @@ export function InternshipBoostPayment({ internshipTitle, onClose, onPaymentSucc
                 </div>
               </div>
 
-              {/* Boost Features */}
               <div className="space-y-4 mb-8">
                 {[
                   {
@@ -211,7 +205,6 @@ export function InternshipBoostPayment({ internshipTitle, onClose, onPaymentSucc
                 })}
               </div>
 
-              {/* Price & CTA */}
               <div className="text-center mb-6">
                 <div className="mb-2">
                   <span className="text-sm" style={{ color: '#d3d3d3' }}>One-time payment</span>
@@ -264,7 +257,6 @@ export function InternshipBoostPayment({ internshipTitle, onClose, onPaymentSucc
             </>
           ) : (
             <>
-              {/* Payment Methods */}
               <div className="mb-6">
                 <h3 className="text-xl mb-4" style={{ color: '#f6f6f6' }}>
                   Select Payment Method
@@ -314,7 +306,6 @@ export function InternshipBoostPayment({ internshipTitle, onClose, onPaymentSucc
                 </div>
               </div>
 
-              {/* Amount Summary */}
               <div
                 className="p-4 rounded-xl mb-6"
                 style={{
@@ -338,7 +329,6 @@ export function InternshipBoostPayment({ internshipTitle, onClose, onPaymentSucc
                 </div>
               </div>
 
-              {/* Action Buttons */}
               <div className="flex gap-3">
                 <motion.button
                   whileHover={{ scale: 1.02 }}
@@ -385,7 +375,6 @@ export function InternshipBoostPayment({ internshipTitle, onClose, onPaymentSucc
           )}
         </div>
 
-        {/* Decorative Line */}
         <motion.div
           className="absolute bottom-0 left-0 right-0 h-1"
           style={{

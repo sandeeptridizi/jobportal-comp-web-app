@@ -14,7 +14,6 @@ export function JobDetails({ job, onClose }: JobDetailsProps) {
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto">
-        {/* Header */}
         <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-start">
           <div className="flex-1">
             <h2 className="mb-2">{job.title}</h2>
@@ -28,9 +27,7 @@ export function JobDetails({ job, onClose }: JobDetailsProps) {
           </button>
         </div>
 
-        {/* Content */}
         <div className="px-6 py-6">
-          {/* Job Info */}
           <div className="flex flex-wrap gap-4 mb-6 pb-6 border-b border-gray-200">
             <div className="flex items-center gap-2 text-gray-700">
               <MapPin className="w-5 h-5" />
@@ -50,13 +47,11 @@ export function JobDetails({ job, onClose }: JobDetailsProps) {
             </div>
           </div>
 
-          {/* Description */}
           <div className="mb-6">
             <h3 className="mb-3">About the Role</h3>
             <p className="text-gray-700 leading-relaxed">{job.description}</p>
           </div>
 
-          {/* Responsibilities */}
           <div className="mb-6">
             <h3 className="mb-3">Responsibilities</h3>
             <ul className="list-disc list-inside space-y-2 text-gray-700">
@@ -66,7 +61,6 @@ export function JobDetails({ job, onClose }: JobDetailsProps) {
             </ul>
           </div>
 
-          {/* Requirements */}
           <div className="mb-6">
             <h3 className="mb-3">Requirements</h3>
             <ul className="list-disc list-inside space-y-2 text-gray-700">
@@ -76,7 +70,6 @@ export function JobDetails({ job, onClose }: JobDetailsProps) {
             </ul>
           </div>
 
-          {/* Application Form or Button */}
           {showApplicationForm ? (
             <ApplicationForm job={job} onCancel={() => setShowApplicationForm(false)} />
           ) : (

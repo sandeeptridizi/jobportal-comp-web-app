@@ -21,7 +21,6 @@ export function FreelanceProposals({ jobs, applicants, onUpdateStatus, onStartCh
   const [showProfile, setShowProfile] = useState(false);
   const [chatApplicant, setChatApplicant] = useState<Applicant | null>(null);
 
-  // Safe defaults
   const safeJobs = jobs || [];
   const safeApplicants = applicants || [];
 
@@ -60,7 +59,6 @@ export function FreelanceProposals({ jobs, applicants, onUpdateStatus, onStartCh
 
   return (
     <div className="h-screen flex" style={{ background: '#f6f6f6' }}>
-      {/* Left Side - Proposals List */}
       <div className="w-2/5 flex flex-col" style={{ background: '#ffffff', borderRight: '2px solid #d3d3d3' }}>
         <div className="p-6 text-white relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #000000 0%, #023047 100%)', borderBottom: '2px solid #FFC300' }}>
           <motion.div
@@ -86,7 +84,6 @@ export function FreelanceProposals({ jobs, applicants, onUpdateStatus, onStartCh
               <h1 style={{ color: '#f6f6f6' }}>Freelance Proposals</h1>
             </div>
             
-            {/* Search */}
             <div className="relative mb-4">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5" style={{ color: '#FFC300' }} />
               <input
@@ -107,7 +104,6 @@ export function FreelanceProposals({ jobs, applicants, onUpdateStatus, onStartCh
               />
             </div>
 
-            {/* Filters */}
             <div className="grid grid-cols-2 gap-3">
               <select
                 value={selectedGig}
@@ -142,7 +138,6 @@ export function FreelanceProposals({ jobs, applicants, onUpdateStatus, onStartCh
           </div>
         </div>
 
-        {/* Proposals List */}
         <div className="flex-1 overflow-y-auto">
           {filteredApplicants.length > 0 ? (
             <div>
@@ -224,19 +219,16 @@ export function FreelanceProposals({ jobs, applicants, onUpdateStatus, onStartCh
         </div>
       </div>
 
-      {/* Right Side - Proposal Details */}
       {selectedApplicant ? (
         <div className="flex-1 overflow-y-auto" style={{ background: '#f6f6f6' }}>
           <div className="p-8">
             <div className="max-w-5xl mx-auto">
-              {/* Profile Header Card */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="rounded-2xl shadow-sm mb-6 overflow-hidden"
                 style={{ background: '#ffffff', border: '2px solid #d3d3d3' }}
               >
-                {/* Header Section with Gradient */}
                 <div className="p-8 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #000000 0%, #023047 100%)' }}>
                   <motion.div
                     className="absolute inset-0 opacity-20"
@@ -272,11 +264,8 @@ export function FreelanceProposals({ jobs, applicants, onUpdateStatus, onStartCh
                   </div>
                 </div>
 
-                {/* Contact & Status Section */}
                 <div className="p-8">
-                  {/* Bid Amount & Proposal Status - Side by Side */}
                   <div className="grid grid-cols-2 gap-4 mb-6">
-                    {/* Bid Amount */}
                     <motion.div 
                       whileHover={{ scale: 1.02 }}
                       className="rounded-xl p-6"
@@ -299,7 +288,6 @@ export function FreelanceProposals({ jobs, applicants, onUpdateStatus, onStartCh
                       </div>
                     </motion.div>
 
-                    {/* Status Management */}
                     <div className="rounded-xl p-6" style={{ background: '#ffffff', border: '2px solid #FFC300' }}>
                       <div className="flex flex-col gap-3">
                         <div className="flex items-center gap-3">
@@ -344,7 +332,6 @@ export function FreelanceProposals({ jobs, applicants, onUpdateStatus, onStartCh
                     </div>
                   </div>
 
-                  {/* Action Buttons */}
                   <div className="flex gap-3 mb-6">
                     <motion.a
                       whileHover={{ scale: 1.05 }}
@@ -390,7 +377,6 @@ export function FreelanceProposals({ jobs, applicants, onUpdateStatus, onStartCh
                     </motion.button>
                   </div>
 
-                  {/* Freelancer Profile - Conditional Display */}
                   {showProfile && (
                     <motion.div 
                       initial={{ opacity: 0, height: 0 }}
@@ -425,7 +411,6 @@ export function FreelanceProposals({ jobs, applicants, onUpdateStatus, onStartCh
                 </div>
               </motion.div>
 
-              {/* Proposal Details */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -445,7 +430,6 @@ export function FreelanceProposals({ jobs, applicants, onUpdateStatus, onStartCh
                   </p>
                 </div>
                 
-                {/* Skills/Technologies */}
                 <div>
                   <h4 className="text-sm mb-3" style={{ color: '#6f6f6f' }}>Skills & Technologies</h4>
                   <div className="flex flex-wrap gap-2">
@@ -477,7 +461,6 @@ export function FreelanceProposals({ jobs, applicants, onUpdateStatus, onStartCh
         </div>
       )}
       
-      {/* Messenger Chat */}
       {chatApplicant && (
         <MessengerChat
           applicant={chatApplicant}

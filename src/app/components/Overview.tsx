@@ -91,7 +91,6 @@ export function Overview({ jobs, applicants }: OverviewProps) {
 
   return (
     <div className="p-8 min-h-screen" style={{ background: '#f6f6f6' }}>
-      {/* Header */}
       <motion.div 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -125,7 +124,6 @@ export function Overview({ jobs, applicants }: OverviewProps) {
         </div>
       </motion.div>
 
-      {/* Stats Grid */}
       <div className="grid grid-cols-4 gap-6 mb-8">
         {stats.map((stat, index) => {
           const Icon = stat.icon;
@@ -183,7 +181,6 @@ export function Overview({ jobs, applicants }: OverviewProps) {
       </div>
 
       <div className="grid grid-cols-2 gap-6">
-        {/* Recent Applications */}
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -256,7 +253,6 @@ export function Overview({ jobs, applicants }: OverviewProps) {
           </div>
         </motion.div>
 
-        {/* Top Performing Jobs */}
         <motion.div 
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -319,7 +315,6 @@ export function Overview({ jobs, applicants }: OverviewProps) {
         </motion.div>
       </div>
 
-      {/* Quick Actions */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

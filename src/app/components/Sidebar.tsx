@@ -39,7 +39,6 @@ export function Sidebar({ user, currentView, onViewChange, onLogout, jobsCount =
       className="w-72 flex flex-col shadow-2xl relative overflow-hidden"
       style={{ background: '#000000' }}
     >
-      {/* Animated Background */}
       <motion.div
         className="absolute inset-0 opacity-20"
         animate={{
@@ -52,7 +51,6 @@ export function Sidebar({ user, currentView, onViewChange, onLogout, jobsCount =
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      {/* Logo/Header */}
       <div className="p-6 border-b relative z-10" style={{ borderColor: '#6f6f6f', background: 'linear-gradient(135deg, #000000 0%, #023047 100%)' }}>
         <div className="flex items-center gap-3">
           <motion.div 
@@ -77,14 +75,12 @@ export function Sidebar({ user, currentView, onViewChange, onLogout, jobsCount =
         </div>
       </div>
 
-      {/* Navigation */}
       <nav className="flex-1 p-4 relative z-10">
         <ul className="space-y-2">
           {menuItems.map((item, index) => {
             const Icon = item.icon;
             const isActive = currentView === item.id;
             
-            // Get count for each menu item
             let count = 0;
             if (item.id === 'jobs') count = jobsCount;
             else if (item.id === 'internships') count = internshipsCount;
@@ -174,7 +170,6 @@ export function Sidebar({ user, currentView, onViewChange, onLogout, jobsCount =
             );
           })}
           
-          {/* Quick Recruit - Special Highlighted Item */}
           <motion.li 
             key={quickRecruitItem.id}
             initial={{ opacity: 0, x: -20 }}
@@ -259,7 +254,6 @@ export function Sidebar({ user, currentView, onViewChange, onLogout, jobsCount =
         </ul>
       </nav>
 
-      {/* User Info & Logout */}
       <div className="p-4 border-t relative z-10" style={{ borderColor: '#6f6f6f', background: 'rgba(2, 48, 71, 0.3)' }}>
         <div className="mb-3 px-2">
           <p className="text-xs mb-1" style={{ color: '#6f6f6f' }}>Signed in as</p>
@@ -288,7 +282,6 @@ export function Sidebar({ user, currentView, onViewChange, onLogout, jobsCount =
         </motion.button>
       </div>
       
-      {/* Logout Confirmation Dialog */}
       <AnimatePresence>
         {showLogoutConfirm && (
           <motion.div
@@ -299,7 +292,6 @@ export function Sidebar({ user, currentView, onViewChange, onLogout, jobsCount =
             style={{ background: 'rgba(0, 0, 0, 0.9)' }}
             onClick={() => setShowLogoutConfirm(false)}
           >
-            {/* Animated Background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               {[...Array(15)].map((_, i) => (
                 <motion.div
@@ -337,7 +329,6 @@ export function Sidebar({ user, currentView, onViewChange, onLogout, jobsCount =
                 border: '2px solid #FFC300'
               }}
             >
-              {/* Glow Effect */}
               <motion.div
                 className="absolute inset-0 pointer-events-none"
                 animate={{
@@ -350,7 +341,6 @@ export function Sidebar({ user, currentView, onViewChange, onLogout, jobsCount =
               />
 
               <div className="relative z-10 p-6 space-y-6">
-                {/* Warning Icon */}
                 <motion.div
                   className="flex justify-center"
                   initial={{ scale: 0, rotate: -180 }}
@@ -386,7 +376,6 @@ export function Sidebar({ user, currentView, onViewChange, onLogout, jobsCount =
                   </div>
                 </motion.div>
 
-                {/* Content */}
                 <div className="text-center space-y-2">
                   <motion.h3 
                     initial={{ opacity: 0, y: 10 }}
@@ -408,14 +397,12 @@ export function Sidebar({ user, currentView, onViewChange, onLogout, jobsCount =
                   </motion.p>
                 </div>
 
-                {/* Action Buttons */}
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
                   className="flex gap-3 pt-2"
                 >
-                  {/* Cancel Button */}
                   <motion.button
                     onClick={() => setShowLogoutConfirm(false)}
                     whileHover={{ scale: 1.02 }}
@@ -430,7 +417,6 @@ export function Sidebar({ user, currentView, onViewChange, onLogout, jobsCount =
                     Cancel
                   </motion.button>
 
-                  {/* Confirm Button */}
                   <motion.button
                     onClick={() => {
                       setShowLogoutConfirm(false);
@@ -444,7 +430,6 @@ export function Sidebar({ user, currentView, onViewChange, onLogout, jobsCount =
                       color: '#000000',
                     }}
                   >
-                    {/* Shimmer Effect */}
                     <motion.div
                       className="absolute inset-0"
                       animate={{
@@ -467,7 +452,6 @@ export function Sidebar({ user, currentView, onViewChange, onLogout, jobsCount =
                 </motion.div>
               </div>
 
-              {/* Decorative Line */}
               <motion.div
                 className="absolute bottom-0 left-0 right-0 h-1"
                 style={{ 

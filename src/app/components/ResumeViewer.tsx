@@ -24,7 +24,6 @@ export function ResumeViewer({ applicant, onClose }: ResumeViewerProps) {
           borderBottom: 'none'
         }}
       >
-        {/* Header */}
         <div 
           className="p-4 flex items-center justify-between relative overflow-hidden"
           style={{ 
@@ -92,7 +91,6 @@ export function ResumeViewer({ applicant, onClose }: ResumeViewerProps) {
           </div>
         </div>
 
-        {/* Resume Content */}
         <div className="flex-1 overflow-hidden relative" style={{ background: '#f6f6f6' }}>
           {applicant.resume ? (
             <iframe
@@ -112,7 +110,6 @@ export function ResumeViewer({ applicant, onClose }: ResumeViewerProps) {
           )}
         </div>
 
-        {/* Applicant Info Footer */}
         <div 
           className="p-4"
           style={{ 

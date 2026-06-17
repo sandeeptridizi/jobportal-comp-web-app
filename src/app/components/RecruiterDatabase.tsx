@@ -20,7 +20,6 @@ export interface Candidate {
   lastActive: string;
 }
 
-// Mock candidate data
 const mockCandidates: Candidate[] = [
   {
     id: '1',
@@ -168,7 +167,6 @@ export function RecruiterDatabase() {
   const [showUpgradePlan, setShowUpgradePlan] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
   
-  // Advanced Filters
   const [filters, setFilters] = useState({
     skills: [] as string[],
     locations: [] as string[],
@@ -210,7 +208,6 @@ export function RecruiterDatabase() {
       candidate.skills.some(skill => skill.toLowerCase().includes(searchQuery.toLowerCase())) ||
       candidate.location.toLowerCase().includes(searchQuery.toLowerCase());
     
-    // Apply all filters
     const matchesSkills = filters.skills.length === 0 || 
       filters.skills.some(skill => candidate.skills.includes(skill));
     const matchesLocation = filters.locations.length === 0 || 
@@ -248,7 +245,6 @@ export function RecruiterDatabase() {
 
   return (
     <div className="h-screen flex flex-col" style={{ background: '#f6f6f6' }}>
-      {/* Header */}
       <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -301,7 +297,6 @@ export function RecruiterDatabase() {
               </p>
             </motion.div>
 
-            {/* Upgrade Button */}
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -324,7 +319,6 @@ export function RecruiterDatabase() {
           </div>
         </div>
 
-        {/* Search, Filters, and View Toggle */}
         <div className="flex gap-4">
           <div className="flex-1 relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5" style={{ color: '#6f6f6f' }} />
@@ -373,7 +367,6 @@ export function RecruiterDatabase() {
             </motion.button>
           </div>
 
-          {/* View Toggle */}
           <div className="flex gap-2 p-1 rounded-xl" style={{ background: '#ffffff', border: '2px solid #e0e0e0' }}>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -409,16 +402,13 @@ export function RecruiterDatabase() {
         </div>
       </motion.div>
 
-      {/* Content */}
       <div className="flex-1 overflow-hidden flex">
-        {/* Candidates List/Grid */}
         <div 
           className={viewMode === 'list' ? 'w-2/5 border-r overflow-y-auto' : 'flex-1 overflow-y-auto'}
           style={{ borderColor: '#e0e0e0', background: '#ffffff' }}
         >
           <div className={viewMode === 'list' ? 'p-6 space-y-3' : 'p-6'}>
             {viewMode === 'list' ? (
-              // List View
               filteredCandidates.map((candidate, index) => (
                 <motion.div
                   key={candidate.id}
@@ -501,7 +491,6 @@ export function RecruiterDatabase() {
                 </motion.div>
               ))
             ) : (
-              // Grid View
               <div className="grid grid-cols-3 gap-6">
                 {filteredCandidates.map((candidate, index) => (
                   <motion.div
@@ -600,12 +589,10 @@ export function RecruiterDatabase() {
           </div>
         </div>
 
-        {/* Candidate Details - Only show in List View */}
         {viewMode === 'list' && (
           <div className="flex-1 overflow-y-auto">
             {selectedCandidate ? (
               <div className="p-8 space-y-6">
-                {/* Profile Card */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -697,7 +684,6 @@ export function RecruiterDatabase() {
                   </div>
                 </motion.div>
 
-                {/* Stats Grid */}
                 <div className="grid grid-cols-3 gap-4">
                   {[
                     { label: 'Current CTC', value: `₹${selectedCandidate.currentCTC}L`, icon: DollarSign, color: '#FFC300' },
@@ -737,7 +723,6 @@ export function RecruiterDatabase() {
                   })}
                 </div>
 
-                {/* Contact Information */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -783,7 +768,6 @@ export function RecruiterDatabase() {
                   </div>
                 </motion.div>
 
-                {/* Skills */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -813,7 +797,6 @@ export function RecruiterDatabase() {
                   </div>
                 </motion.div>
 
-                {/* Additional Info */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -872,7 +855,6 @@ export function RecruiterDatabase() {
         )}
       </div>
 
-      {/* Upgrade Plan Modal */}
       <AnimatePresence>
         {showUpgradePlan && (
           <motion.div
@@ -921,7 +903,6 @@ export function RecruiterDatabase() {
                 border: '2px solid #FFC300',
               }}
             >
-              {/* Close Button */}
               <motion.button
                 whileHover={{ scale: 1.1, rotate: 90 }}
                 whileTap={{ scale: 0.9 }}
@@ -936,7 +917,6 @@ export function RecruiterDatabase() {
                 <X className="w-5 h-5" />
               </motion.button>
 
-              {/* Glow Effect */}
               <motion.div
                 className="absolute inset-0 pointer-events-none"
                 animate={{
@@ -949,7 +929,6 @@ export function RecruiterDatabase() {
               />
 
               <div className="relative z-10 p-8">
-                {/* Header */}
                 <div className="text-center mb-8">
                   <motion.div
                     className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4"
@@ -975,9 +954,7 @@ export function RecruiterDatabase() {
                   </p>
                 </div>
 
-                {/* Plans Grid */}
                 <div className="grid grid-cols-2 gap-6 mb-6">
-                  {/* Elite Plan */}
                   <motion.div
                     whileHover={{ scale: 1.03 }}
                     className="rounded-3xl p-8 relative overflow-hidden"
@@ -1045,7 +1022,6 @@ export function RecruiterDatabase() {
                     </div>
                   </motion.div>
 
-                  {/* Pro Plan */}
                   <motion.div
                     whileHover={{ scale: 1.03 }}
                     className="rounded-3xl p-8 relative overflow-hidden"
@@ -1055,7 +1031,6 @@ export function RecruiterDatabase() {
                       boxShadow: '0 0 40px rgba(255, 195, 0, 0.5)',
                     }}
                   >
-                    {/* Popular Badge */}
                     <motion.div
                       className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold"
                       style={{
@@ -1145,13 +1120,11 @@ export function RecruiterDatabase() {
                   </motion.div>
                 </div>
 
-                {/* Footer Note */}
                 <p className="text-center text-sm" style={{ color: '#6f6f6f' }}>
                   All plans include a 14-day money-back guarantee • Cancel anytime
                 </p>
               </div>
 
-              {/* Decorative Line */}
               <motion.div
                 className="absolute bottom-0 left-0 right-0 h-1"
                 style={{
@@ -1167,7 +1140,6 @@ export function RecruiterDatabase() {
         )}
       </AnimatePresence>
 
-      {/* Filters Modal */}
       <AnimatePresence>
         {showFilters && (
           <motion.div
@@ -1227,7 +1199,6 @@ export function RecruiterDatabase() {
                 </div>
 
                 <div className="space-y-6 mb-8">
-                  {/* Job Title */}
                   <div>
                     <label className="block text-sm mb-2" style={{ color: '#f6f6f6' }}>Job Title</label>
                     <input
@@ -1240,7 +1211,6 @@ export function RecruiterDatabase() {
                     />
                   </div>
 
-                  {/* Experience Range */}
                   <div className="grid grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm mb-2" style={{ color: '#f6f6f6' }}>Min Experience: <span style={{ color: '#FFC300' }}>{filters.minExperience} yrs</span></label>
@@ -1252,7 +1222,6 @@ export function RecruiterDatabase() {
                     </div>
                   </div>
 
-                  {/* CTC Ranges */}
                   <div className="grid grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm mb-2" style={{ color: '#f6f6f6' }}>Current CTC: <span style={{ color: '#FFC300' }}>₹{filters.minCurrentCTC}L - ₹{filters.maxCurrentCTC}L</span></label>
@@ -1270,7 +1239,6 @@ export function RecruiterDatabase() {
                     </div>
                   </div>
 
-                  {/* Skills */}
                   <div>
                     <label className="block text-sm mb-3" style={{ color: '#f6f6f6' }}>Skills {filters.skills.length > 0 && <span style={{ color: '#FFC300' }}>({filters.skills.length})</span>}</label>
                     <div className="grid grid-cols-4 gap-2 max-h-48 overflow-y-auto">
@@ -1293,7 +1261,6 @@ export function RecruiterDatabase() {
                     </div>
                   </div>
 
-                  {/* Locations */}
                   <div>
                     <label className="block text-sm mb-3" style={{ color: '#f6f6f6' }}>Locations {filters.locations.length > 0 && <span style={{ color: '#FFC300' }}>({filters.locations.length})</span>}</label>
                     <div className="grid grid-cols-3 gap-2">

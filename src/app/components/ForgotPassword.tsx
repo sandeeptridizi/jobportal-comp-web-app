@@ -17,7 +17,6 @@ export function ForgotPassword({ onBack }: ForgotPasswordProps) {
   
   const otpInputs = useRef<(HTMLInputElement | null)[]>([]);
 
-  // Countdown timer for OTP resend
   useEffect(() => {
     if (step === 'otp' && countdown > 0) {
       const timer = setTimeout(() => setCountdown(countdown - 1), 1000);
@@ -43,7 +42,6 @@ export function ForgotPassword({ onBack }: ForgotPasswordProps) {
     newOtp[index] = value;
     setOtp(newOtp);
 
-    // Auto focus next input
     if (value && index < 5) {
       otpInputs.current[index + 1]?.focus();
     }
@@ -89,7 +87,6 @@ export function ForgotPassword({ onBack }: ForgotPasswordProps) {
       className="w-full max-w-md relative z-10"
     >
       <div className="rounded-2xl shadow-2xl overflow-hidden" style={{ background: '#f6f6f6', border: '2px solid #d3d3d3' }}>
-        {/* Header */}
         <div className="p-6 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #000000 0%, #023047 100%)' }}>
           <motion.div
             className="absolute inset-0 opacity-20"
@@ -135,7 +132,6 @@ export function ForgotPassword({ onBack }: ForgotPasswordProps) {
           </div>
         </div>
 
-        {/* Content */}
         <div className="p-8">
           {step === 'email' && (
             <motion.form

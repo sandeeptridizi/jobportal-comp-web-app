@@ -34,11 +34,11 @@ export interface Job {
   applicants: number;
   quickRecruit?: {
     enabled: boolean;
-    package: 'quick' | 'complete'; // quick = 999 INR, complete = 2499 INR
+    package: 'quick' | 'complete'; 
   };
   publishingPackage?: {
-    type: 'free' | 'premium'; // free = 0 INR, premium = 99 INR
-    validity: number; // days
+    type: 'free' | 'premium'; 
+    validity: number; 
     maxApplicants: number;
   };
 }
@@ -55,8 +55,8 @@ export interface Applicant {
   appliedDate: string;
   status: 'New' | 'Reviewed' | 'Shortlisted' | 'Rejected' | 'Accepted';
   avatar?: string;
-  bidAmount?: number; // For freelance proposals
-  matchScore?: number; // AI Profile Match Score (0-100)
+  bidAmount?: number; 
+  matchScore?: number; 
 }
 
 export interface Message {

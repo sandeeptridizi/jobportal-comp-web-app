@@ -29,7 +29,6 @@ export function JobForm({ job, preselectedType, onSave, onCancel }: JobFormProps
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // If editing existing job or it already has a package, save directly
     if (job || formData.publishingPackage) {
       const newJob: Job = {
         id: job?.id || Date.now().toString(),
@@ -40,7 +39,6 @@ export function JobForm({ job, preselectedType, onSave, onCancel }: JobFormProps
       };
       onSave(newJob);
     } else {
-      // For new jobs without package, show package selection
       setShowPackageSelection(true);
     }
   };
@@ -168,7 +166,6 @@ export function JobForm({ job, preselectedType, onSave, onCancel }: JobFormProps
           </div>
 
           <form onSubmit={handleSubmit} className="p-8 space-y-6">
-            {/* Type Selection Info Banner */}
             {!job && (
               <motion.div 
                 initial={{ opacity: 0, y: -10 }}
@@ -185,7 +182,6 @@ export function JobForm({ job, preselectedType, onSave, onCancel }: JobFormProps
               </motion.div>
             )}
 
-            {/* Basic Info */}
             <div className="grid grid-cols-3 gap-6">
               <div className="col-span-2">
                 <label htmlFor="title" className="block mb-2" style={{ color: '#000000' }}>
@@ -310,7 +306,6 @@ export function JobForm({ job, preselectedType, onSave, onCancel }: JobFormProps
               </div>
             </div>
 
-            {/* Quick Recruit Package Section */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -375,7 +370,6 @@ export function JobForm({ job, preselectedType, onSave, onCancel }: JobFormProps
                     animate={{ opacity: 1, height: 'auto' }}
                     className="grid grid-cols-2 gap-4 mt-6"
                   >
-                    {/* Quick Package */}
                     <motion.div
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
@@ -461,7 +455,6 @@ export function JobForm({ job, preselectedType, onSave, onCancel }: JobFormProps
                       </div>
                     </motion.div>
 
-                    {/* Complete Package */}
                     <motion.div
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
@@ -555,7 +548,6 @@ export function JobForm({ job, preselectedType, onSave, onCancel }: JobFormProps
               </div>
             </motion.div>
 
-            {/* Description */}
             <div>
               <label htmlFor="description" className="block mb-2" style={{ color: '#000000' }}>
                 {formData.type === 'Internship' ? 'Internship Description' : 
@@ -588,7 +580,6 @@ export function JobForm({ job, preselectedType, onSave, onCancel }: JobFormProps
             </div>
 
             <div className="grid grid-cols-2 gap-6">
-              {/* Requirements */}
               <div>
                 <label className="block mb-3" style={{ color: '#000000' }}>
                   {formData.type === 'Internship' ? 'Qualifications' : 
@@ -655,7 +646,6 @@ export function JobForm({ job, preselectedType, onSave, onCancel }: JobFormProps
                 </div>
               </div>
 
-              {/* Responsibilities */}
               <div>
                 <label className="block mb-3" style={{ color: '#000000' }}>
                   {formData.type === 'Internship' ? 'Learning Opportunities' : 
@@ -723,7 +713,6 @@ export function JobForm({ job, preselectedType, onSave, onCancel }: JobFormProps
               </div>
             </div>
 
-            {/* Actions */}
             <div className="flex gap-4 pt-6" style={{ borderTop: '2px solid #d3d3d3' }}>
               <motion.button
                 whileHover={{ scale: 1.02 }}

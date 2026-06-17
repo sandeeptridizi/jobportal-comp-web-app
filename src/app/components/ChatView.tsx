@@ -28,13 +28,11 @@ export function ChatView({
     messages.some(m => m.applicantId === applicant.id)
   );
 
-  // Get job type for an applicant
   const getJobType = (applicantJobId: string): Job['type'] | null => {
     const job = jobs.find(j => j.id === applicantJobId);
     return job ? job.type : null;
   };
 
-  // Filter by category
   const categoryFilteredApplicants = applicantsWithMessages.filter(applicant => {
     const jobType = getJobType(applicant.jobId);
     if (!jobType) return false;
@@ -50,7 +48,6 @@ export function ChatView({
     applicant.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  // Get counts for each category
   const getCategoryCount = (category: 'all' | 'jobs' | 'internships' | 'freelance'): number => {
     if (category === 'all') return applicantsWithMessages.length;
     
@@ -89,7 +86,6 @@ export function ChatView({
 
   return (
     <div className="h-screen flex" style={{ background: '#f6f6f6' }}>
-      {/* Left Side - Conversations List */}
       <motion.div 
         initial={{ x: -50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -97,7 +93,6 @@ export function ChatView({
         className="w-96 bg-white border-r flex flex-col"
         style={{ borderColor: '#d3d3d3' }}
       >
-        {/* Header with AI Glow Effect */}
         <div className="p-6 border-b relative overflow-hidden" style={{ borderColor: '#d3d3d3', background: 'linear-gradient(135deg, #000000 0%, #023047 100%)' }}>
           <motion.div
             className="absolute inset-0 opacity-20"
@@ -133,7 +128,6 @@ export function ChatView({
               />
             </div>
 
-            {/* Category Tabs */}
             <div className="flex gap-2 overflow-x-auto pb-1">
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -317,11 +311,9 @@ export function ChatView({
         </div>
       </motion.div>
 
-      {/* Right Side - Chat Area */}
       <div className="flex-1 flex flex-col bg-white">
         {selectedApplicant ? (
           <>
-            {/* Chat Header */}
             <motion.div 
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -361,7 +353,6 @@ export function ChatView({
               </div>
             </motion.div>
 
-            {/* Messages */}
             <div className="flex-1 overflow-y-auto p-8" style={{ background: '#f6f6f6' }}>
               <div className="max-w-4xl mx-auto space-y-6">
                 <AnimatePresence>
@@ -412,7 +403,6 @@ export function ChatView({
               </div>
             </div>
 
-            {/* Message Input */}
             <motion.div 
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}

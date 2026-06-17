@@ -122,7 +122,6 @@ export function FreelanceManager({ jobs, applicants, onAddJob, onUpdateJob, onDe
     return (
       <div className="p-8 min-h-screen" style={{ background: '#f6f6f6' }}>
         <div className="max-w-7xl mx-auto">
-          {/* Back Button */}
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -141,7 +140,6 @@ export function FreelanceManager({ jobs, applicants, onAddJob, onUpdateJob, onDe
             <span className="relative z-10">Back to Freelance Gigs</span>
           </motion.button>
 
-          {/* Gig Details */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -228,7 +226,6 @@ export function FreelanceManager({ jobs, applicants, onAddJob, onUpdateJob, onDe
             </div>
           </motion.div>
 
-          {/* Proposals Section */}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -241,7 +238,6 @@ export function FreelanceManager({ jobs, applicants, onAddJob, onUpdateJob, onDe
                 <h2 style={{ color: '#000000' }}>Proposals ({allJobApplicants.length})</h2>
               </div>
               
-              {/* Applicant Status Filters */}
               <div className="flex gap-2">
                 {(['All', 'New', 'Reviewed', 'Shortlisted', 'Accepted', 'Rejected'] as const).map(status => {
                   const count = status === 'All' 
@@ -391,7 +387,6 @@ export function FreelanceManager({ jobs, applicants, onAddJob, onUpdateJob, onDe
           </div>
         </div>
 
-        {/* Messenger Chat */}
         {chatApplicant && (
           <MessengerChat
             applicant={chatApplicant}
@@ -402,7 +397,6 @@ export function FreelanceManager({ jobs, applicants, onAddJob, onUpdateJob, onDe
           />
         )}
 
-        {/* Resume Viewer */}
         {resumeApplicant && (
           <ResumeViewer
             applicant={resumeApplicant}
@@ -416,7 +410,6 @@ export function FreelanceManager({ jobs, applicants, onAddJob, onUpdateJob, onDe
   return (
     <div className="p-8 min-h-screen" style={{ background: '#f6f6f6' }}>
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="flex justify-between items-start mb-8">
           <div>
             <motion.div
@@ -448,7 +441,6 @@ export function FreelanceManager({ jobs, applicants, onAddJob, onUpdateJob, onDe
           </motion.button>
         </div>
 
-        {/* Filters and Search */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -508,7 +500,6 @@ export function FreelanceManager({ jobs, applicants, onAddJob, onUpdateJob, onDe
           </div>
         </motion.div>
 
-        {/* Freelance Gigs Table */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -627,7 +618,6 @@ export function FreelanceManager({ jobs, applicants, onAddJob, onUpdateJob, onDe
         </motion.div>
       </div>
 
-      {/* Freelance Gig Form Modal */}
       {showForm && (
         <JobForm
           job={editingJob}
